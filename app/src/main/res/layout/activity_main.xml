@@ -11,6 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
         android:text="Calculate 99"
         android:textColor="@color/md_theme_dark_background"
         android:textSize="48sp"
@@ -150,7 +151,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.373" />
 
-    <TextView
+    <Button
         android:id="@+id/textView10"
         android:layout_width="57dp"
         android:layout_height="59dp"
@@ -221,7 +222,7 @@
         android:id="@+id/textView20"
         android:layout_width="50dp"
         android:layout_height="49dp"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="116dp"
         android:autoText="false"
         android:background="@color/md_theme_dark_onSurfaceVariant"
         android:text="1"
@@ -237,7 +238,7 @@
         android:id="@+id/textView21"
         android:layout_width="50dp"
         android:layout_height="49dp"
-        android:layout_marginStart="184dp"
+        android:layout_marginStart="172dp"
         android:autoText="false"
         android:background="@color/md_theme_dark_onSurfaceVariant"
         android:text="1"
@@ -282,5 +283,24 @@
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.667" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="66dp"
+        android:layout_height="67dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@color/md_theme_dark_onSurfaceVariant"
+        android:text="Button"
+        android:textColorLink="#F42525"
+        tools:layout_editor_absoluteX="196dp"
+        tools:layout_editor_absoluteY="247dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
