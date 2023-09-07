@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="numButton">48sp</dimen>
+    <dimen name="signButton">28sp</dimen>
+</resources>
