@@ -39,19 +39,21 @@
         android:layout_height="518dp"
         android:background="@color/md_theme_dark_surfaceVariant"
         android:textColor="@color/md_theme_dark_outline"
+        android:onClick="displayResult"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/answerBox"
         android:layout_width="235dp"
         android:layout_height="75dp"
         android:background="@color/md_theme_light_background"
-        android:text="342"
+        android:text=""
         android:textColor="@color/md_theme_dark_background"
         android:textSize="60sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintHorizontal_bias="0.491"
@@ -71,7 +73,7 @@
         app:layout_constraintVertical_bias="0.776" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/numDivide"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="60dp"
         android:layout_height="59dp"
@@ -81,7 +83,9 @@
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="/"
+        android:transitionName="/"
         android:textAlignment="textEnd"
+        android:onClick="addOperator"
         android:textSize="@dimen/signButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
@@ -89,14 +93,15 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.844" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/numEqual"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="114dp"
         android:layout_height="48dp"
         android:layout_marginStart="120dp"
+        android:onClick="displayResult"
         android:autoText="false"
         android:foregroundTint="#C11717"
         android:paddingLeft="0dp"
@@ -114,17 +119,19 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/numMinus"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="60dp"
         android:layout_height="59dp"
         android:autoText="false"
+        android:transitionName="-"
         android:foregroundTint="#C11717"
         android:paddingLeft="0dp"
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="-"
         android:textAlignment="textEnd"
+        android:onClick="addOperator"
         android:textSize="@dimen/signButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
@@ -135,37 +142,40 @@
         app:layout_constraintVertical_bias="0.844" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/numMultiply"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="60dp"
         android:layout_height="59dp"
+        android:layout_marginStart="116dp"
         android:autoText="false"
         android:foregroundTint="#C11717"
         android:paddingLeft="0dp"
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="*"
+        android:transitionName="*"
         android:textAlignment="textEnd"
+        android:onClick="addOperator"
         android:textSize="@dimen/signButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="@+id/button7"
-        app:layout_constraintHorizontal_bias="0.67"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.844" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/numPlus"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="60dp"
         android:layout_height="59dp"
         android:autoText="false"
+        android:transitionName="+"
         android:foregroundTint="#C11717"
         android:paddingLeft="0dp"
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="+"
+        android:onClick="addOperator"
         android:textAlignment="textEnd"
         android:textSize="@dimen/signButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
@@ -177,7 +187,7 @@
         app:layout_constraintVertical_bias="0.844" />
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/numClear"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="119dp"
         android:layout_height="48dp"
@@ -187,6 +197,7 @@
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="Clear"
+        android:onClick="clearAll"
         android:textAlignment="textEnd"
         android:textSize="@dimen/signButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
@@ -198,7 +209,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/num8"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
@@ -208,6 +219,8 @@
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="8"
+        android:onClick="addNum"
+        android:transitionName="8"
         android:textAlignment="textEnd"
         android:textSize="@dimen/numButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
@@ -219,16 +232,18 @@
         app:layout_constraintVertical_bias="0.598" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/num5"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
         android:autoText="false"
         android:foregroundTint="#C11717"
         android:paddingLeft="0dp"
+        android:onClick="addNum"
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="5"
+        android:transitionName="5"
         android:textAlignment="textEnd"
         android:textSize="@dimen/numButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
@@ -240,16 +255,18 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/num4"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
         android:autoText="false"
         android:foregroundTint="#C11717"
         android:paddingLeft="0dp"
+        android:onClick="addNum"
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="4"
+        android:transitionName="4"
         android:textAlignment="textEnd"
         android:textSize="@dimen/numButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
@@ -261,7 +278,7 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/num6"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
@@ -269,8 +286,10 @@
         android:foregroundTint="#C11717"
         android:paddingLeft="0dp"
         android:paddingTop="0dp"
+        android:onClick="addNum"
         android:paddingRight="20dp"
         android:text="6"
+        android:transitionName="6"
         android:textAlignment="textEnd"
         android:textSize="@dimen/numButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
@@ -282,7 +301,7 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/num7"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
@@ -291,7 +310,9 @@
         android:paddingLeft="0dp"
         android:paddingTop="0dp"
         android:paddingRight="20dp"
+        android:onClick="addNum"
         android:text="7"
+        android:transitionName="7"
         android:textAlignment="textEnd"
         android:textSize="@dimen/numButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
@@ -303,7 +324,7 @@
         app:layout_constraintVertical_bias="0.598" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/num9"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
@@ -313,24 +334,27 @@
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="9"
+        android:onClick="addNum"
+        android:transitionName="9"
         android:textAlignment="textEnd"
         android:textSize="@dimen/numButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.598" />
+        app:layout_constraintVertical_bias="0.591" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/num1"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
         android:autoText="false"
+        android:onClick="addNum"
         android:foregroundTint="#C11717"
-        android:onClick=""
+        android:transitionName="1"
         android:paddingLeft="0dp"
         android:paddingTop="0dp"
         android:paddingRight="20dp"
@@ -346,37 +370,40 @@
         app:layout_constraintVertical_bias="0.096" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/num2"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
         android:autoText="false"
         android:foregroundTint="#C11717"
+        android:onClick="addNum"
         android:paddingLeft="0dp"
         android:paddingTop="0dp"
+        android:transitionName="2"
         android:paddingRight="20dp"
         android:text="2"
         android:textAlignment="textEnd"
         android:textSize="@dimen/numButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.096" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/num3"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="67dp"
         android:layout_height="69dp"
         android:autoText="false"
         android:foregroundTint="#C11717"
         android:paddingLeft="0dp"
+        android:onClick="addNum"
         android:paddingTop="0dp"
         android:paddingRight="20dp"
         android:text="3"
+        android:transitionName="3"
         android:textAlignment="textEnd"
         android:textSize="@dimen/numButton"
         app:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
