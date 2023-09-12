@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     String firstNumber = "";
     String secondNumber = "";
     String operator = "";
+    boolean piGame = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,5 +75,11 @@ public class MainActivity extends AppCompatActivity {
         operator = "";
         numberType = "first";
         answerBox.setText("");
+    }
+
+    public void piGame(View v){
+        String pi = "3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214";
+        String userInput = "3.";
+        piGame = true;
     }
 }
