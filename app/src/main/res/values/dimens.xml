@@ -2,4 +2,5 @@
 <resources>
     <dimen name="numButton">48sp</dimen>
     <dimen name="signButton">28sp</dimen>
+    <dimen name="paddingSign">20dp</dimen>
 </resources>
